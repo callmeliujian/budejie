@@ -7,25 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		524F348A1D696E7D00C48AAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F34891D696E7D00C48AAA /* main.m */; };
-		524F348D1D696E7D00C48AAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F348C1D696E7D00C48AAA /* AppDelegate.m */; };
-		524F34901D696E7D00C48AAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F348F1D696E7D00C48AAA /* ViewController.m */; };
-		524F34931D696E7D00C48AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524F34911D696E7D00C48AAA /* Main.storyboard */; };
+		5249234D1D69DB0500B8152F /* BDJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923261D69DB0500B8152F /* BDJEssenceViewController.m */; };
+		5249234E1D69DB0500B8152F /* BDJFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */; };
+		5249234F1D69DB0500B8152F /* BDJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923321D69DB0500B8152F /* BDJMeViewController.m */; };
+		524923501D69DB0500B8152F /* BDJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923381D69DB0500B8152F /* BDJNewViewController.m */; };
+		524923511D69DB0500B8152F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249233D1D69DB0500B8152F /* AppDelegate.m */; };
+		524923521D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923411D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m */; };
+		524923531D69DB0500B8152F /* UIView+BDJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923431D69DB0500B8152F /* UIView+BDJExtension.m */; };
+		524923541D69DB0500B8152F /* BDJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923461D69DB0500B8152F /* BDJTabBarController.m */; };
+		524923561D69DB0500B8152F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524923481D69DB0500B8152F /* LaunchScreen.storyboard */; };
+		524923571D69DB0500B8152F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923491D69DB0500B8152F /* main.m */; };
+		524923581D69DB0500B8152F /* BDJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249234C1D69DB0500B8152F /* BDJTabBar.m */; };
+		5249235A1D69DBB100B8152F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524923591D69DBB100B8152F /* Info.plist */; };
 		524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524F34941D696E7D00C48AAA /* Assets.xcassets */; };
-		524F34981D696E7D00C48AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524F34961D696E7D00C48AAA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524923251D69DB0500B8152F /* BDJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJEssenceViewController.h; sourceTree = "<group>"; };
+		524923261D69DB0500B8152F /* BDJEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJEssenceViewController.m; sourceTree = "<group>"; };
+		5249232B1D69DB0500B8152F /* BDJFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJFriendTrendsViewController.h; sourceTree = "<group>"; };
+		5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJFriendTrendsViewController.m; sourceTree = "<group>"; };
+		524923311D69DB0500B8152F /* BDJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJMeViewController.h; sourceTree = "<group>"; };
+		524923321D69DB0500B8152F /* BDJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJMeViewController.m; sourceTree = "<group>"; };
+		524923371D69DB0500B8152F /* BDJNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJNewViewController.h; sourceTree = "<group>"; };
+		524923381D69DB0500B8152F /* BDJNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJNewViewController.m; sourceTree = "<group>"; };
+		5249233C1D69DB0500B8152F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5249233D1D69DB0500B8152F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5249233E1D69DB0500B8152F /* BDJ.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJ.pch; sourceTree = "<group>"; };
+		524923401D69DB0500B8152F /* UIBarButtonItem+BDJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BDJExtension.h"; sourceTree = "<group>"; };
+		524923411D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BDJExtension.m"; sourceTree = "<group>"; };
+		524923421D69DB0500B8152F /* UIView+BDJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BDJExtension.h"; sourceTree = "<group>"; };
+		524923431D69DB0500B8152F /* UIView+BDJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BDJExtension.m"; sourceTree = "<group>"; };
+		524923451D69DB0500B8152F /* BDJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTabBarController.h; sourceTree = "<group>"; };
+		524923461D69DB0500B8152F /* BDJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTabBarController.m; sourceTree = "<group>"; };
+		524923481D69DB0500B8152F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		524923491D69DB0500B8152F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5249234B1D69DB0500B8152F /* BDJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTabBar.h; sourceTree = "<group>"; };
+		5249234C1D69DB0500B8152F /* BDJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTabBar.m; sourceTree = "<group>"; };
+		524923591D69DBB100B8152F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524F34851D696E7D00C48AAA /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		524F34891D696E7D00C48AAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		524F348B1D696E7D00C48AAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		524F348C1D696E7D00C48AAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		524F348E1D696E7D00C48AAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		524F348F1D696E7D00C48AAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		524F34921D696E7D00C48AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		524F34941D696E7D00C48AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		524F34971D696E7D00C48AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		524F34991D696E7D00C48AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +60,194 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524923221D69DB0500B8152F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				524923231D69DB0500B8152F /* Essence */,
+				524923291D69DB0500B8152F /* FriendTrends */,
+				5249232F1D69DB0500B8152F /* Me */,
+				524923351D69DB0500B8152F /* New */,
+				5249233B1D69DB0500B8152F /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		524923231D69DB0500B8152F /* Essence */ = {
+			isa = PBXGroup;
+			children = (
+				524923241D69DB0500B8152F /* Controller */,
+				524923271D69DB0500B8152F /* Model */,
+				524923281D69DB0500B8152F /* View */,
+			);
+			path = Essence;
+			sourceTree = "<group>";
+		};
+		524923241D69DB0500B8152F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524923251D69DB0500B8152F /* BDJEssenceViewController.h */,
+				524923261D69DB0500B8152F /* BDJEssenceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		524923271D69DB0500B8152F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		524923281D69DB0500B8152F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		524923291D69DB0500B8152F /* FriendTrends */ = {
+			isa = PBXGroup;
+			children = (
+				5249232A1D69DB0500B8152F /* Controller */,
+				5249232D1D69DB0500B8152F /* Model */,
+				5249232E1D69DB0500B8152F /* View */,
+			);
+			path = FriendTrends;
+			sourceTree = "<group>";
+		};
+		5249232A1D69DB0500B8152F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5249232B1D69DB0500B8152F /* BDJFriendTrendsViewController.h */,
+				5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5249232D1D69DB0500B8152F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5249232E1D69DB0500B8152F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5249232F1D69DB0500B8152F /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				524923301D69DB0500B8152F /* Controller */,
+				524923331D69DB0500B8152F /* Model */,
+				524923341D69DB0500B8152F /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		524923301D69DB0500B8152F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524923311D69DB0500B8152F /* BDJMeViewController.h */,
+				524923321D69DB0500B8152F /* BDJMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		524923331D69DB0500B8152F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		524923341D69DB0500B8152F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		524923351D69DB0500B8152F /* New */ = {
+			isa = PBXGroup;
+			children = (
+				524923361D69DB0500B8152F /* Controller */,
+				524923391D69DB0500B8152F /* Model */,
+				5249233A1D69DB0500B8152F /* View */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		524923361D69DB0500B8152F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524923371D69DB0500B8152F /* BDJNewViewController.h */,
+				524923381D69DB0500B8152F /* BDJNewViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		524923391D69DB0500B8152F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5249233A1D69DB0500B8152F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5249233B1D69DB0500B8152F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				524923441D69DB0500B8152F /* Controller */,
+				5249234A1D69DB0500B8152F /* View */,
+				5249233F1D69DB0500B8152F /* Category */,
+				5249233C1D69DB0500B8152F /* AppDelegate.h */,
+				5249233D1D69DB0500B8152F /* AppDelegate.m */,
+				5249233E1D69DB0500B8152F /* BDJ.pch */,
+				524923491D69DB0500B8152F /* main.m */,
+				524923481D69DB0500B8152F /* LaunchScreen.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5249233F1D69DB0500B8152F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				524923401D69DB0500B8152F /* UIBarButtonItem+BDJExtension.h */,
+				524923411D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m */,
+				524923421D69DB0500B8152F /* UIView+BDJExtension.h */,
+				524923431D69DB0500B8152F /* UIView+BDJExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		524923441D69DB0500B8152F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524923451D69DB0500B8152F /* BDJTabBarController.h */,
+				524923461D69DB0500B8152F /* BDJTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5249234A1D69DB0500B8152F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5249234B1D69DB0500B8152F /* BDJTabBar.h */,
+				5249234C1D69DB0500B8152F /* BDJTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		524F347C1D696E7D00C48AAA = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +267,7 @@
 		524F34871D696E7D00C48AAA /* 百思不得姐 */ = {
 			isa = PBXGroup;
 			children = (
-				524F348B1D696E7D00C48AAA /* AppDelegate.h */,
-				524F348C1D696E7D00C48AAA /* AppDelegate.m */,
-				524F348E1D696E7D00C48AAA /* ViewController.h */,
-				524F348F1D696E7D00C48AAA /* ViewController.m */,
-				524F34911D696E7D00C48AAA /* Main.storyboard */,
-				524F34941D696E7D00C48AAA /* Assets.xcassets */,
-				524F34961D696E7D00C48AAA /* LaunchScreen.storyboard */,
-				524F34991D696E7D00C48AAA /* Info.plist */,
+				524923221D69DB0500B8152F /* Classes */,
 				524F34881D696E7D00C48AAA /* Supporting Files */,
 			);
 			path = "百思不得姐";
@@ -74,7 +276,8 @@
 		524F34881D696E7D00C48AAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				524F34891D696E7D00C48AAA /* main.m */,
+				524923591D69DBB100B8152F /* Info.plist */,
+				524F34941D696E7D00C48AAA /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,6 +308,7 @@
 		524F347D1D696E7D00C48AAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BDJ;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "😄";
 				TargetAttributes = {
@@ -136,9 +340,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524F34981D696E7D00C48AAA /* LaunchScreen.storyboard in Resources */,
+				524923561D69DB0500B8152F /* LaunchScreen.storyboard in Resources */,
 				524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */,
-				524F34931D696E7D00C48AAA /* Main.storyboard in Resources */,
+				5249235A1D69DBB100B8152F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,32 +353,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524F34901D696E7D00C48AAA /* ViewController.m in Sources */,
-				524F348D1D696E7D00C48AAA /* AppDelegate.m in Sources */,
-				524F348A1D696E7D00C48AAA /* main.m in Sources */,
+				524923541D69DB0500B8152F /* BDJTabBarController.m in Sources */,
+				5249234D1D69DB0500B8152F /* BDJEssenceViewController.m in Sources */,
+				524923521D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m in Sources */,
+				5249234E1D69DB0500B8152F /* BDJFriendTrendsViewController.m in Sources */,
+				524923501D69DB0500B8152F /* BDJNewViewController.m in Sources */,
+				5249234F1D69DB0500B8152F /* BDJMeViewController.m in Sources */,
+				524923581D69DB0500B8152F /* BDJTabBar.m in Sources */,
+				524923511D69DB0500B8152F /* AppDelegate.m in Sources */,
+				524923571D69DB0500B8152F /* main.m in Sources */,
+				524923531D69DB0500B8152F /* UIView+BDJExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		524F34911D696E7D00C48AAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				524F34921D696E7D00C48AAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		524F34961D696E7D00C48AAA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				524F34971D696E7D00C48AAA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		524F349A1D696E7D00C48AAA /* Debug */ = {
@@ -265,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other/BDJ.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LiuJian.-----";
@@ -276,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other/BDJ.pch";
 				INFOPLIST_FILE = "百思不得姐/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LiuJian.-----";
@@ -302,6 +496,7 @@
 				524F349E1D696E7D00C48AAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

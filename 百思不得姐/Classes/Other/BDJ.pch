@@ -1,0 +1,21 @@
+
+//
+//  BDJ.pch
+//  百思不得姐
+//
+//  Created by 😄 on 16/8/21.
+//  Copyright © 2016年 😄. All rights reserved.
+//
+
+#ifndef BDJ_pch
+#define BDJ_pch
+
+#import "UIView+BDJExtension.h"
+
+#import "UIBarButtonItem+BDJExtension.h"
+
+#define BDJRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define BDJGlobalBg BDJRGBColor(223, 223, 223)
+
+#endif /* BDJ_pch */
