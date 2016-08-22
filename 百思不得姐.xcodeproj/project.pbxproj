@@ -19,6 +19,8 @@
 		524923571D69DB0500B8152F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923491D69DB0500B8152F /* main.m */; };
 		524923581D69DB0500B8152F /* BDJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249234C1D69DB0500B8152F /* BDJTabBar.m */; };
 		5249235A1D69DBB100B8152F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524923591D69DBB100B8152F /* Info.plist */; };
+		5249235D1D6A824E00B8152F /* BDJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249235C1D6A824E00B8152F /* BDJNavigationController.m */; };
+		5249235F1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */; };
 		524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524F34941D696E7D00C48AAA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,9 @@
 		5249234B1D69DB0500B8152F /* BDJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJTabBar.h; sourceTree = "<group>"; };
 		5249234C1D69DB0500B8152F /* BDJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJTabBar.m; sourceTree = "<group>"; };
 		524923591D69DBB100B8152F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5249235B1D6A824E00B8152F /* BDJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJNavigationController.h; sourceTree = "<group>"; };
+		5249235C1D6A824E00B8152F /* BDJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJNavigationController.m; sourceTree = "<group>"; };
+		5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDJFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		524F34851D696E7D00C48AAA /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524F34941D696E7D00C48AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +125,7 @@
 			children = (
 				5249232B1D69DB0500B8152F /* BDJFriendTrendsViewController.h */,
 				5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */,
+				5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 			children = (
 				524923451D69DB0500B8152F /* BDJTabBarController.h */,
 				524923461D69DB0500B8152F /* BDJTabBarController.m */,
+				5249235B1D6A824E00B8152F /* BDJNavigationController.h */,
+				5249235C1D6A824E00B8152F /* BDJNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 				524923561D69DB0500B8152F /* LaunchScreen.storyboard in Resources */,
 				524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */,
 				5249235A1D69DBB100B8152F /* Info.plist in Resources */,
+				5249235F1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +369,7 @@
 				524923501D69DB0500B8152F /* BDJNewViewController.m in Sources */,
 				5249234F1D69DB0500B8152F /* BDJMeViewController.m in Sources */,
 				524923581D69DB0500B8152F /* BDJTabBar.m in Sources */,
+				5249235D1D6A824E00B8152F /* BDJNavigationController.m in Sources */,
 				524923511D69DB0500B8152F /* AppDelegate.m in Sources */,
 				524923571D69DB0500B8152F /* main.m in Sources */,
 				524923531D69DB0500B8152F /* UIView+BDJExtension.m in Sources */,

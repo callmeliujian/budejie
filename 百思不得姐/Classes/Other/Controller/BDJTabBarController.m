@@ -12,12 +12,28 @@
 #import "BDJFriendTrendsViewController.h"
 #import "BDJMeViewController.h"
 #import "BDJTabBar.h"
+#import "BDJNavigationController.h"
 
 @interface BDJTabBarController ()
 
 @end
 
 @implementation BDJTabBarController
+
++ (void)initialize
+{
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    
+    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
+    selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
+    selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,28 +59,13 @@
 - (void)setUpChildVc:(UIViewController *)vc title:(NSString *)title iamge:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    
-    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
-    selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
-    
-    UITabBarItem *item = [UITabBarItem appearance];
-    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
-    [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
-
     vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     
     //包装一个导航控制器，添加导航控制器为tabbarcontroller的子控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    //设置导航控制器图片
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    BDJNavigationController *nav = [[BDJNavigationController alloc] initWithRootViewController:vc];
     
     [self addChildViewController:nav];
     
