@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BDJRecommendViewController">
+            <connections>
+                <outlet property="typeTableView" destination="QyT-Th-6ZT" id="KhL-ns-DtG"/>
+                <outlet property="userTableView" destination="ElX-g7-Ztm" id="nad-W6-MUX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QyT-Th-6ZT" userLabel="左侧表格">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="9ON-Gw-wW9"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="od8-M2-4Y9"/>
+                        <outlet property="delegate" destination="-1" id="IDY-i1-qpe"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ElX-g7-Ztm" userLabel="右侧表格">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ctd-Yc-nyd"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ElX-g7-Ztm" firstAttribute="leading" secondItem="QyT-Th-6ZT" secondAttribute="trailing" id="EkF-1c-Czb"/>
+                <constraint firstItem="ElX-g7-Ztm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cm2-IO-JSv"/>
+                <constraint firstItem="QyT-Th-6ZT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hZb-fw-LaV"/>
+                <constraint firstAttribute="trailing" secondItem="ElX-g7-Ztm" secondAttribute="trailing" id="i5k-cC-2Wb"/>
+                <constraint firstItem="QyT-Th-6ZT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kW2-z0-lQE"/>
+                <constraint firstAttribute="bottom" secondItem="QyT-Th-6ZT" secondAttribute="bottom" id="n65-Vw-XaB"/>
+                <constraint firstAttribute="bottom" secondItem="ElX-g7-Ztm" secondAttribute="bottom" id="pOY-rc-W1c"/>
+            </constraints>
+            <point key="canvasLocation" x="-285" y="206"/>
+        </view>
+    </objects>
+</document>

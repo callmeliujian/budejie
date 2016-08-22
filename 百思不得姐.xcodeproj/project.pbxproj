@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0819215E17286748BF983475 /* libPods-百思不得姐.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8CEBCD52B7189478094B12 /* libPods-百思不得姐.a */; };
+		5225D3A31D6B4C480051A02F /* BDJRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5225D3A11D6B4C480051A02F /* BDJRecommendUserCell.m */; };
+		5225D3A41D6B4C480051A02F /* BDJRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5225D3A21D6B4C480051A02F /* BDJRecommendUserCell.xib */; };
+		5225D3A71D6B504C0051A02F /* BDJRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5225D3A61D6B504C0051A02F /* BDJRecommendUser.m */; };
 		5249234D1D69DB0500B8152F /* BDJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923261D69DB0500B8152F /* BDJEssenceViewController.m */; };
 		5249234E1D69DB0500B8152F /* BDJFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */; };
 		5249234F1D69DB0500B8152F /* BDJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923321D69DB0500B8152F /* BDJMeViewController.m */; };
@@ -21,10 +25,24 @@
 		5249235A1D69DBB100B8152F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524923591D69DBB100B8152F /* Info.plist */; };
 		5249235D1D6A824E00B8152F /* BDJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249235C1D6A824E00B8152F /* BDJNavigationController.m */; };
 		5249235F1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */; };
+		524923631D6AB3AC00B8152F /* BDJRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923611D6AB3AC00B8152F /* BDJRecommendViewController.m */; };
+		524923641D6AB3AC00B8152F /* BDJRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524923621D6AB3AC00B8152F /* BDJRecommendViewController.xib */; };
+		5249236A1D6AB5DE00B8152F /* NSDictionary+BDJLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 524923691D6AB5DE00B8152F /* NSDictionary+BDJLog.m */; };
+		5249236D1D6ABF9900B8152F /* BDJRecommendType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249236C1D6ABF9900B8152F /* BDJRecommendType.m */; };
+		524923711D6AC23400B8152F /* BDJRecommendTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5249236F1D6AC23400B8152F /* BDJRecommendTypeCell.m */; };
+		524923721D6AC23400B8152F /* BDJRecommendTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524923701D6AC23400B8152F /* BDJRecommendTypeCell.xib */; };
 		524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524F34941D696E7D00C48AAA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8CEBCD52B7189478094B12 /* libPods-百思不得姐.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-百思不得姐.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1705033D8C7D305F248FA542 /* Pods-百思不得姐.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.release.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.release.xcconfig"; sourceTree = "<group>"; };
+		2535BB8B2914435D165D773B /* Pods-百思不得姐.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.debug.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.debug.xcconfig"; sourceTree = "<group>"; };
+		5225D3A01D6B4C480051A02F /* BDJRecommendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJRecommendUserCell.h; sourceTree = "<group>"; };
+		5225D3A11D6B4C480051A02F /* BDJRecommendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJRecommendUserCell.m; sourceTree = "<group>"; };
+		5225D3A21D6B4C480051A02F /* BDJRecommendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDJRecommendUserCell.xib; sourceTree = "<group>"; };
+		5225D3A51D6B504C0051A02F /* BDJRecommendUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJRecommendUser.h; sourceTree = "<group>"; };
+		5225D3A61D6B504C0051A02F /* BDJRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJRecommendUser.m; sourceTree = "<group>"; };
 		524923251D69DB0500B8152F /* BDJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJEssenceViewController.h; sourceTree = "<group>"; };
 		524923261D69DB0500B8152F /* BDJEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJEssenceViewController.m; sourceTree = "<group>"; };
 		5249232B1D69DB0500B8152F /* BDJFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -50,6 +68,16 @@
 		5249235B1D6A824E00B8152F /* BDJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJNavigationController.h; sourceTree = "<group>"; };
 		5249235C1D6A824E00B8152F /* BDJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJNavigationController.m; sourceTree = "<group>"; };
 		5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDJFriendTrendsViewController.xib; sourceTree = "<group>"; };
+		524923601D6AB3AC00B8152F /* BDJRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJRecommendViewController.h; sourceTree = "<group>"; };
+		524923611D6AB3AC00B8152F /* BDJRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJRecommendViewController.m; sourceTree = "<group>"; };
+		524923621D6AB3AC00B8152F /* BDJRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDJRecommendViewController.xib; sourceTree = "<group>"; };
+		524923681D6AB5DE00B8152F /* NSDictionary+BDJLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDJLog.h"; sourceTree = "<group>"; };
+		524923691D6AB5DE00B8152F /* NSDictionary+BDJLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDJLog.m"; sourceTree = "<group>"; };
+		5249236B1D6ABF9900B8152F /* BDJRecommendType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJRecommendType.h; sourceTree = "<group>"; };
+		5249236C1D6ABF9900B8152F /* BDJRecommendType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJRecommendType.m; sourceTree = "<group>"; };
+		5249236E1D6AC23400B8152F /* BDJRecommendTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJRecommendTypeCell.h; sourceTree = "<group>"; };
+		5249236F1D6AC23400B8152F /* BDJRecommendTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJRecommendTypeCell.m; sourceTree = "<group>"; };
+		524923701D6AC23400B8152F /* BDJRecommendTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BDJRecommendTypeCell.xib; sourceTree = "<group>"; };
 		524F34851D696E7D00C48AAA /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524F34941D696E7D00C48AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0819215E17286748BF983475 /* libPods-百思不得姐.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +155,9 @@
 				5249232B1D69DB0500B8152F /* BDJFriendTrendsViewController.h */,
 				5249232C1D69DB0500B8152F /* BDJFriendTrendsViewController.m */,
 				5249235E1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib */,
+				524923601D6AB3AC00B8152F /* BDJRecommendViewController.h */,
+				524923611D6AB3AC00B8152F /* BDJRecommendViewController.m */,
+				524923621D6AB3AC00B8152F /* BDJRecommendViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +165,10 @@
 		5249232D1D69DB0500B8152F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5249236B1D6ABF9900B8152F /* BDJRecommendType.h */,
+				5249236C1D6ABF9900B8152F /* BDJRecommendType.m */,
+				5225D3A51D6B504C0051A02F /* BDJRecommendUser.h */,
+				5225D3A61D6B504C0051A02F /* BDJRecommendUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +176,12 @@
 		5249232E1D69DB0500B8152F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5249236E1D6AC23400B8152F /* BDJRecommendTypeCell.h */,
+				5249236F1D6AC23400B8152F /* BDJRecommendTypeCell.m */,
+				524923701D6AC23400B8152F /* BDJRecommendTypeCell.xib */,
+				5225D3A01D6B4C480051A02F /* BDJRecommendUserCell.h */,
+				5225D3A11D6B4C480051A02F /* BDJRecommendUserCell.m */,
+				5225D3A21D6B4C480051A02F /* BDJRecommendUserCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +274,8 @@
 				524923411D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m */,
 				524923421D69DB0500B8152F /* UIView+BDJExtension.h */,
 				524923431D69DB0500B8152F /* UIView+BDJExtension.m */,
+				524923681D6AB5DE00B8152F /* NSDictionary+BDJLog.h */,
+				524923691D6AB5DE00B8152F /* NSDictionary+BDJLog.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -261,6 +305,8 @@
 			children = (
 				524F34871D696E7D00C48AAA /* 百思不得姐 */,
 				524F34861D696E7D00C48AAA /* Products */,
+				64969AE2129801ADEB202F77 /* Pods */,
+				65901437011DF6DEB5007242 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +336,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		64969AE2129801ADEB202F77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2535BB8B2914435D165D773B /* Pods-百思不得姐.debug.xcconfig */,
+				1705033D8C7D305F248FA542 /* Pods-百思不得姐.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65901437011DF6DEB5007242 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CEBCD52B7189478094B12 /* libPods-百思不得姐.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,9 +360,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 524F349C1D696E7D00C48AAA /* Build configuration list for PBXNativeTarget "百思不得姐" */;
 			buildPhases = (
+				1FF3281A4B9D64821DF6CF71 /* [CP] Check Pods Manifest.lock */,
 				524F34811D696E7D00C48AAA /* Sources */,
 				524F34821D696E7D00C48AAA /* Frameworks */,
 				524F34831D696E7D00C48AAA /* Resources */,
+				76E288F7D690C8B7394BC85E /* [CP] Embed Pods Frameworks */,
+				1DD16AD48B78D338069E3912 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,6 +416,9 @@
 			files = (
 				524923561D69DB0500B8152F /* LaunchScreen.storyboard in Resources */,
 				524F34951D696E7D00C48AAA /* Assets.xcassets in Resources */,
+				524923641D6AB3AC00B8152F /* BDJRecommendViewController.xib in Resources */,
+				524923721D6AC23400B8152F /* BDJRecommendTypeCell.xib in Resources */,
+				5225D3A41D6B4C480051A02F /* BDJRecommendUserCell.xib in Resources */,
 				5249235A1D69DBB100B8152F /* Info.plist in Resources */,
 				5249235F1D6AAC7300B8152F /* BDJFriendTrendsViewController.xib in Resources */,
 			);
@@ -357,22 +426,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DD16AD48B78D338069E3912 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FF3281A4B9D64821DF6CF71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		76E288F7D690C8B7394BC85E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		524F34811D696E7D00C48AAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				524923541D69DB0500B8152F /* BDJTabBarController.m in Sources */,
+				5249236A1D6AB5DE00B8152F /* NSDictionary+BDJLog.m in Sources */,
 				5249234D1D69DB0500B8152F /* BDJEssenceViewController.m in Sources */,
 				524923521D69DB0500B8152F /* UIBarButtonItem+BDJExtension.m in Sources */,
 				5249234E1D69DB0500B8152F /* BDJFriendTrendsViewController.m in Sources */,
 				524923501D69DB0500B8152F /* BDJNewViewController.m in Sources */,
+				5249236D1D6ABF9900B8152F /* BDJRecommendType.m in Sources */,
+				5225D3A71D6B504C0051A02F /* BDJRecommendUser.m in Sources */,
 				5249234F1D69DB0500B8152F /* BDJMeViewController.m in Sources */,
 				524923581D69DB0500B8152F /* BDJTabBar.m in Sources */,
 				5249235D1D6A824E00B8152F /* BDJNavigationController.m in Sources */,
+				5225D3A31D6B4C480051A02F /* BDJRecommendUserCell.m in Sources */,
+				524923631D6AB3AC00B8152F /* BDJRecommendViewController.m in Sources */,
 				524923511D69DB0500B8152F /* AppDelegate.m in Sources */,
 				524923571D69DB0500B8152F /* main.m in Sources */,
 				524923531D69DB0500B8152F /* UIView+BDJExtension.m in Sources */,
+				524923711D6AC23400B8152F /* BDJRecommendTypeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +588,7 @@
 		};
 		524F349D1D696E7D00C48AAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2535BB8B2914435D165D773B /* Pods-百思不得姐.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other/BDJ.pch";
@@ -477,6 +601,7 @@
 		};
 		524F349E1D696E7D00C48AAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1705033D8C7D305F248FA542 /* Pods-百思不得姐.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "百思不得姐/Classes/Other/BDJ.pch";

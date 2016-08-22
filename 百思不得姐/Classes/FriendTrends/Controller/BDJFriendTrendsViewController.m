@@ -7,6 +7,7 @@
 //
 
 #import "BDJFriendTrendsViewController.h"
+#import "BDJRecommendViewController.h"
 
 @interface BDJFriendTrendsViewController ()
 
@@ -31,7 +32,8 @@
 
 - (void)friendsClick
 {
-    
+    BDJRecommendViewController *vc = [[BDJRecommendViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
