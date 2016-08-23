@@ -96,7 +96,11 @@ static NSString * const BDJTypeUser = @"user";
     if (tableView == self.typeTableView) {
         return self.type.count;
     }else{
-        return self.users.count;
+        
+        BDJRecommendType *c = self.type[self.typeTableView.indexPathForSelectedRow.row];
+        
+        
+        return c.users.count;
     }
     
 }
@@ -112,7 +116,9 @@ static NSString * const BDJTypeUser = @"user";
     }else{ //右边表格
         BDJRecommendUserCell *cell = [tableView dequeueReusableCellWithIdentifier:BDJTypeUser];
         
-        cell.user = self.users[indexPath.row];
+        BDJRecommendType *c = self.type[self.typeTableView.indexPathForSelectedRow.row];
+        
+        cell.user = c.users[indexPath.row];
         
         return  cell;
     }
@@ -126,21 +132,34 @@ static NSString * const BDJTypeUser = @"user";
     
     BDJRecommendType *c  = self.type[indexPath.row];
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(c.id);
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    if (c.users.count) {  //显示曾经获取到的数据
         
-        self.users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        //刷新右边表格
         [self.userTableView reloadData];
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
         
-    }];
+    }else{
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"a"] = @"list";
+        params[@"c"] = @"subscribe";
+        params[@"category_id"] = @(c.id);
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+            
+            NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            
+            [c.users addObjectsFromArray:users];
+            
+            //刷新右边表格
+            [self.userTableView reloadData];
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            
+        }];
+        
 
-}
+        
+    }
+    
+    }
 
 @end
