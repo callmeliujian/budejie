@@ -14,6 +14,9 @@
 #import "BDJRecommendType.h"
 #import "BDJRecommendUserCell.h"
 #import "BDJRecommendUser.h"
+#import <MJRefresh.h>
+
+#define BDJSelectedType self.type[self.typeTableView.indexPathForSelectedRow.row]
 
 @interface BDJRecommendViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -40,6 +43,9 @@ static NSString * const BDJTypeUser = @"user";
     [super viewDidLoad];
     
     [self setUpTableView];
+    
+    //设置刷新控件
+    [self setUpRefresh];
     
     //设置指示器
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
@@ -68,6 +74,55 @@ static NSString * const BDJTypeUser = @"user";
     
 }
 
+- (void)setUpRefresh
+{
+    self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
+    
+    self.userTableView.mj_footer.hidden = YES;
+}
+
+/**
+ *加载用户数据
+ */
+- (void)loadMoreUsers
+{
+    BDJRecommendType *type = BDJSelectedType;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @([BDJSelectedType id]);
+    params[@"page"] = @(++type.currentPage);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+        //字典数组 -> 模型数组
+        NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        
+        [type.users addObjectsFromArray:users];
+        
+        //刷新右边表格
+        [self.userTableView reloadData];
+        
+        //让底部空间结束刷新
+        
+        if (type.users.count == type.total) { //全部加载完毕
+            [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+        }else{
+            [self.userTableView.mj_footer endRefreshing];
+        }
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        
+    }];
+
+    
+}
+
 - (void)setUpTableView
 {
     //注册cell
@@ -93,14 +148,16 @@ static NSString * const BDJTypeUser = @"user";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.typeTableView) {
+    if (tableView == self.typeTableView) { //左面表格
         return self.type.count;
-    }else{
+    }else{  //右面表格
         
-        BDJRecommendType *c = self.type[self.typeTableView.indexPathForSelectedRow.row];
+        NSInteger count = [BDJSelectedType users].count;
         
+        //每次刷新右边表格数据的时候，设置footer是显示／隐藏
+        self.userTableView.mj_footer.hidden = (count == 0);
         
-        return c.users.count;
+        return count;
     }
     
 }
@@ -116,9 +173,9 @@ static NSString * const BDJTypeUser = @"user";
     }else{ //右边表格
         BDJRecommendUserCell *cell = [tableView dequeueReusableCellWithIdentifier:BDJTypeUser];
         
-        BDJRecommendType *c = self.type[self.typeTableView.indexPathForSelectedRow.row];
         
-        cell.user = c.users[indexPath.row];
+        
+        cell.user = [BDJSelectedType users][indexPath.row];
         
         return  cell;
     }
@@ -132,25 +189,44 @@ static NSString * const BDJTypeUser = @"user";
     
     BDJRecommendType *c  = self.type[indexPath.row];
     
+    
+    
     if (c.users.count) {  //显示曾经获取到的数据
         
         [self.userTableView reloadData];
         
     }else{
         
+        //刷新表格，马上显示当前内容，防止用户看到上一次的数据
+        [self.userTableView reloadData];
+        
+        //设置当前页码为1
+        c.currentPage = 1;
+        
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         params[@"a"] = @"list";
         params[@"c"] = @"subscribe";
         params[@"category_id"] = @(c.id);
+        params[@"page"] = @(c.currentPage);
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
             
+            //字典数组 －> 模型数组
             NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
             
+            //添加当前类别到对应的数组中
             [c.users addObjectsFromArray:users];
+            
+            //保存总数
+            c.total = [responseObject[@"total"] integerValue];
             
             //刷新右边表格
             [self.userTableView reloadData];
+            
+            if (c.users.count == c.total) { //全部加载完毕
+                [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+            }
+            
         } failure:^(NSURLSessionTask *operation, NSError *error) {
             NSLog(@"Error: %@", error);
             

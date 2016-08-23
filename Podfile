@@ -11,4 +11,6 @@ pod 'SVProgressHUD'
 
 pod 'MJExtension', '~> 2.0.0'
 
+pod 'MJRefresh'
+
 end

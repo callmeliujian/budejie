@@ -16,6 +16,21 @@
 
 @property (nonatomic, copy) NSString *name;
 
+//当前类别对应的用户数据
 @property (nonatomic, strong) NSMutableArray *users;
+
+//总页数
+@property (nonatomic, assign) NSInteger total_page;
+
+//总数
+@property (nonatomic, assign) NSInteger total;
+
+//下一页
+@property (nonatomic, assign) NSInteger next_page;
+
+//当前页
+@property (nonatomic, assign) NSInteger currentPage;
+
+
 
 @end
