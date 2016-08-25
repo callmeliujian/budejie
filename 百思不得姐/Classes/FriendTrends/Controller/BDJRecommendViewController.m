@@ -74,8 +74,13 @@ static NSString * const BDJTypeUser = @"user";
     
 }
 
+/**
+ *添加刷新控件
+ */
 - (void)setUpRefresh
 {
+    self.userTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
+    
     self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
     
     self.userTableView.mj_footer.hidden = YES;
@@ -84,6 +89,56 @@ static NSString * const BDJTypeUser = @"user";
 /**
  *加载用户数据
  */
+
+- (void)loadNewUsers
+{
+    BDJRecommendType *currentType = BDJSelectedType;
+    
+    //设置当前页码为1
+    currentType.currentPage = 1;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @(currentType.id);
+    params[@"page"] = @(currentType.currentPage);
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        //字典数组 －> 模型数组
+        NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        //清除所有旧数据
+        [currentType.users removeAllObjects];
+        
+        //添加当前类别到对应的数组中
+        [currentType.users addObjectsFromArray:users];
+        
+        //保存总数
+        currentType .total = [responseObject[@"total"] integerValue];
+        
+        //刷新右边表格
+        [self.userTableView reloadData];
+        
+        //结束刷新
+        [self.userTableView.mj_header endRefreshing];
+        
+        //让底部空间结束刷新
+        [self checkFooterState];
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        
+        //提醒失败
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
+        
+        //结束刷新
+        [self.userTableView.mj_header endRefreshing];
+        
+    }];
+
+
+}
+
 - (void)loadMoreUsers
 {
     BDJRecommendType *type = BDJSelectedType;
@@ -108,15 +163,16 @@ static NSString * const BDJTypeUser = @"user";
         [self.userTableView reloadData];
         
         //让底部空间结束刷新
-        
-        if (type.users.count == type.total) { //全部加载完毕
-            [self.userTableView.mj_footer endRefreshingWithNoMoreData];
-        }else{
-            [self.userTableView.mj_footer endRefreshing];
-        }
+        [self checkFooterState];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        
+        //提醒失败
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
+        
+        //结束刷新
+        [self.userTableView.mj_header endRefreshing];
         
     }];
 
@@ -144,6 +200,24 @@ static NSString * const BDJTypeUser = @"user";
 
 }
 
+/**
+ *检测footer状态
+ */
+- (void)checkFooterState
+{
+    BDJRecommendType *currentType = BDJSelectedType;
+    
+    //每次刷新右边表格数据的时候，设置footer是显示／隐藏
+    self.userTableView.mj_footer.hidden = (currentType.users.count == 0);
+    
+    //让底部空间结束刷新
+    if (currentType.users.count == currentType.total) { //全部加载完毕
+        [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [self.userTableView.mj_footer endRefreshing];
+    }
+}
+
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -151,13 +225,11 @@ static NSString * const BDJTypeUser = @"user";
     if (tableView == self.typeTableView) { //左面表格
         return self.type.count;
     }else{  //右面表格
+
+        //监听footer状态
+        [self checkFooterState];
         
-        NSInteger count = [BDJSelectedType users].count;
-        
-        //每次刷新右边表格数据的时候，设置footer是显示／隐藏
-        self.userTableView.mj_footer.hidden = (count == 0);
-        
-        return count;
+        return [BDJSelectedType users].count;
     }
     
 }
@@ -200,42 +272,11 @@ static NSString * const BDJTypeUser = @"user";
         //刷新表格，马上显示当前内容，防止用户看到上一次的数据
         [self.userTableView reloadData];
         
-        //设置当前页码为1
-        c.currentPage = 1;
+        //进入下拉刷新状态
+        [self.userTableView.mj_header beginRefreshing];
         
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"a"] = @"list";
-        params[@"c"] = @"subscribe";
-        params[@"category_id"] = @(c.id);
-        params[@"page"] = @(c.currentPage);
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-            
-            //字典数组 －> 模型数组
-            NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
-            
-            //添加当前类别到对应的数组中
-            [c.users addObjectsFromArray:users];
-            
-            //保存总数
-            c.total = [responseObject[@"total"] integerValue];
-            
-            //刷新右边表格
-            [self.userTableView reloadData];
-            
-            if (c.users.count == c.total) { //全部加载完毕
-                [self.userTableView.mj_footer endRefreshingWithNoMoreData];
-            }
-            
-        } failure:^(NSURLSessionTask *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-            
-        }];
-        
-
         
     }
-    
-    }
+}
 
 @end
