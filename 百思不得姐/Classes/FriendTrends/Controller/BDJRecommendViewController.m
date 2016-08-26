@@ -31,6 +31,10 @@
 //右边表格
 @property (weak, nonatomic) IBOutlet UITableView *userTableView;
 
+@property (nonatomic, strong) NSMutableDictionary *params;
+
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+
 @end
 
 @implementation BDJRecommendViewController
@@ -38,6 +42,14 @@
 static NSString * const BDJTypeId = @"type";
 
 static NSString * const BDJTypeUser = @"user";
+
+- (AFHTTPSessionManager *)manager
+{
+    if (_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +59,16 @@ static NSString * const BDJTypeUser = @"user";
     //设置刷新控件
     [self setUpRefresh];
     
+    //加载左侧类型数据
+    [self loadTypes];
+    
+}
+
+/**
+ *加载左侧类型数据
+ */
+- (void)loadTypes
+{
     //设置指示器
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
@@ -54,9 +76,9 @@ static NSString * const BDJTypeUser = @"user";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
     params[@"c"] = @"subscribe";
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-       
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
         [SVProgressHUD dismiss];
         
         
@@ -71,7 +93,7 @@ static NSString * const BDJTypeUser = @"user";
         NSLog(@"Error: %@", error);
         [SVProgressHUD showErrorWithStatus:@"加载推荐信息失败"];
     }];
-    
+
 }
 
 /**
@@ -102,8 +124,12 @@ static NSString * const BDJTypeUser = @"user";
     params[@"c"] = @"subscribe";
     params[@"category_id"] = @(currentType.id);
     params[@"page"] = @(currentType.currentPage);
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    self.params = params;
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        //最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
         
         //字典数组 －> 模型数组
         NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -128,6 +154,9 @@ static NSString * const BDJTypeUser = @"user";
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         
+        //最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
+        
         //提醒失败
         [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
         
@@ -148,8 +177,12 @@ static NSString * const BDJTypeUser = @"user";
     params[@"c"] = @"subscribe";
     params[@"category_id"] = @([BDJSelectedType id]);
     params[@"page"] = @(++type.currentPage);
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    self.params = params;
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        //最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
         
         NSLog(@"%@",responseObject);
         
@@ -166,6 +199,9 @@ static NSString * const BDJTypeUser = @"user";
         [self checkFooterState];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+        //最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
         NSLog(@"Error: %@", error);
         
         //提醒失败
@@ -258,10 +294,10 @@ static NSString * const BDJTypeUser = @"user";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.userTableView.mj_header endRefreshing];
+    [self.userTableView.mj_footer endRefreshing];
     
     BDJRecommendType *c  = self.type[indexPath.row];
-    
-    
     
     if (c.users.count) {  //显示曾经获取到的数据
         
@@ -277,6 +313,12 @@ static NSString * const BDJTypeUser = @"user";
         
         
     }
+}
+
+- (void)dealloc
+{
+    //退出控制器之后，结束所有请求
+    [self.manager.operationQueue cancelAllOperations];
 }
 
 @end
