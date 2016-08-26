@@ -45,7 +45,7 @@ static NSString * const BDJTypeUser = @"user";
 
 - (AFHTTPSessionManager *)manager
 {
-    if (_manager) {
+    if (!_manager) {
         _manager = [AFHTTPSessionManager manager];
     }
     return _manager;
@@ -89,6 +89,9 @@ static NSString * const BDJTypeUser = @"user";
         //默认选中首行
         [self.typeTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
         
+        //让表格进入刷新状态
+        [self.userTableView.mj_header beginRefreshing];
+        
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         [SVProgressHUD showErrorWithStatus:@"加载推荐信息失败"];
@@ -128,9 +131,6 @@ static NSString * const BDJTypeUser = @"user";
     
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
-        //最新的params != params 直接返回，说明有新的请求存在
-        if (self.params != params) return;
-        
         //字典数组 －> 模型数组
         NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
@@ -141,7 +141,10 @@ static NSString * const BDJTypeUser = @"user";
         [currentType.users addObjectsFromArray:users];
         
         //保存总数
-        currentType .total = [responseObject[@"total"] integerValue];
+        currentType.total = [responseObject[@"total"] integerValue];
+        
+        //现保存返回的数据，再判断最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
         
         //刷新右边表格
         [self.userTableView reloadData];
@@ -181,16 +184,14 @@ static NSString * const BDJTypeUser = @"user";
     
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
-        //最新的params != params 直接返回，说明有新的请求存在
-        if (self.params != params) return;
-        
-        NSLog(@"%@",responseObject);
-        
         //字典数组 -> 模型数组
         NSArray *users = [BDJRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         
         [type.users addObjectsFromArray:users];
+        
+        //现保存返回的数据，再判断最新的params != params 直接返回，说明有新的请求存在
+        if (self.params != params) return;
         
         //刷新右边表格
         [self.userTableView reloadData];
@@ -319,6 +320,8 @@ static NSString * const BDJTypeUser = @"user";
 {
     //退出控制器之后，结束所有请求
     [self.manager.operationQueue cancelAllOperations];
+    
+    [SVProgressHUD dismiss];
 }
 
 @end
